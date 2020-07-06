@@ -1,4 +1,7 @@
 package com.company.hilt_lecture.ui.data
 
-class MyRepository {
-}
+import javax.inject.Inject
+import javax.inject.Singleton
+
+@Singleton
+class MyRepository @Inject constructor()

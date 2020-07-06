@@ -9,11 +9,15 @@ import androidx.navigation.fragment.findNavController
 import com.company.hilt_lecture.R
 import com.company.hilt_lecture.ui.data.MyRepository
 import com.company.hilt_lecture.ui.second.SecondActivity
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_main.*
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainFragment : Fragment(R.layout.fragment_main) {
 
-    val repository = MyRepository()
+    @Inject
+    lateinit var repository: MyRepository
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

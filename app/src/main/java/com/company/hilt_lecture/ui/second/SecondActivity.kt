@@ -1,14 +1,18 @@
 package com.company.hilt_lecture.ui.second
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import com.company.hilt_lecture.R
 import com.company.hilt_lecture.ui.data.MyRepository
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class SecondActivity : AppCompatActivity() {
 
-    val repository = MyRepository()
+    @Inject
+    lateinit var repository: MyRepository
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
