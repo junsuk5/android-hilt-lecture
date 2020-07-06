@@ -1,4 +1,4 @@
-package com.company.hilt_lecture.ui.data
+package com.company.hilt_lecture.data
 
 import javax.inject.Inject
 import javax.inject.Singleton
