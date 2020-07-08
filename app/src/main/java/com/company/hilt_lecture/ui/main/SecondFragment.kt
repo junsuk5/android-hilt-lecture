@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.company.hilt_lecture.R
 import com.company.hilt_lecture.data.MyRepository
@@ -15,6 +16,7 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class SecondFragment : Fragment(R.layout.fragment_second) {
+    private val viewModel by viewModels<MainViewModel>()
 
     @Inject
     lateinit var repository: MyRepository
@@ -37,5 +39,6 @@ class SecondFragment : Fragment(R.layout.fragment_second) {
         Log.d("SecondFragment", "${repository.hashCode()}")
         Log.d("SecondFragment", "appHash: $applicationHash")
         Log.d("SecondFragment", "activityHash: $activityHash")
+        Log.d("SecondFragment", "viewModel: ${viewModel.getRepositoryHash()}")
     }
 }
