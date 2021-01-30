@@ -4,10 +4,12 @@ import com.company.hilt_lecture.di.qualifier.ActivityHash
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ActivityComponent
 import dagger.hilt.android.components.ApplicationComponent
+import dagger.hilt.components.SingletonComponent
 
 @Module
-@InstallIn(ApplicationComponent::class)
+@InstallIn(ActivityComponent::class)
 object ActivityModule {
 
     @ActivityHash
