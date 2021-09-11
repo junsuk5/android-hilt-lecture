@@ -4,7 +4,6 @@ import com.company.hilt_lecture.di.qualifier.AppHash
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ApplicationComponent
 import dagger.hilt.components.SingletonComponent
 
 @Module

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
@@ -14,7 +15,6 @@ import com.company.hilt_lecture.di.qualifier.ActivityHash
 import com.company.hilt_lecture.di.qualifier.AppHash
 import com.company.hilt_lecture.ui.second.SecondActivity
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.fragment_main.*
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -36,12 +36,12 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        button_activity.setOnClickListener {
+        view.findViewById<Button>(R.id.button_activity).setOnClickListener {
             val intent = Intent(requireContext(), SecondActivity::class.java)
             startActivity(intent)
         }
 
-        button_fragment.setOnClickListener {
+        view.findViewById<Button>(R.id.button_fragment).setOnClickListener {
             findNavController().navigate(R.id.action_mainFragment_to_secondFragment)
         }
 
